@@ -1,6 +1,4 @@
-function generateReadme(answers) {
-
-    return `#${answers.title}
+#vc
 
     ## Table of contents:
     [description](#description)
@@ -15,27 +13,22 @@ function generateReadme(answers) {
     [email](#emails)
 
 ### description:
-${answers.description}
+seasc
 ### installation:
-${answers.installation}
+qwqsc 
 ### linkURL
-${answers.linkURL}
+sdcv
 ### usage:
-${answers.usage}
+sedfsf
 ### license:
-${answers.license}
-### contributing:
-${answers.contributors}
-### tests:
-${answers.tests}
-### questions:
-${answers.questions}
-### Username:
-${answers.Username}
-### email:
-${answers.email}
-`;
-}
-// generateReadme();
 
-module.exports = generateReadme;
+### contributing:
+undefined
+### tests:
+
+### questions:
+wsesadc
+### Username:
+dasccfv
+### email:
+faf

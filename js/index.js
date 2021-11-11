@@ -10,7 +10,7 @@ const writeFileAsync = util.promisify(fs.writeFile);
 const questions = [{
         type: "input",
         message: "What is the project title?",
-        name: "projectTitle",
+        name: "title",
     },
     {
         type: "input",
@@ -18,54 +18,54 @@ const questions = [{
         name: "description",
     },
 
-    // {
-    //     type: "input",
-    //     message: "What is the code the user needs for installing packages?:",
-    //     name: "installation",
-    // },
-    // {
-    //     type: "input",
-    //     message: "What is your LinkedIn URL?",
-    //     name: "linkURL",
-    // },
-    // {
-    //     type: "input",
-    //     message: "What is project used for?",
-    //     name: "usage",
-    // },
-    // {
-    //     type: "input",
-    //     message: "Chose the appropriate license for this project:",
-    //     name: "license",
+    {
+        type: "input",
+        message: "What is the code the user needs for installing packages?:",
+        name: "installation",
+    },
+    {
+        type: "input",
+        message: "What is your LinkedIn URL?",
+        name: "linkURL",
+    },
+    {
+        type: "input",
+        message: "What is project used for?",
+        name: "usage",
+    },
+    {
+        type: "input",
+        message: "Chose the appropriate license for this project:",
+        name: "license",
 
-    //     Choices: ["MIT", "GNU", "Open", "Mozilla", "Apache", "BSD", ],
-    // },
+        Choices: ["MIT", "GNU", "Open", "Mozilla", "Apache", "BSD", ],
+    },
 
-    // {
-    //     type: "input",
-    //     message: "Who are the contributors of this projects?",
-    //     name: "contributing",
-    // },
-    // {
-    //     type: "input",
-    //     message: "Were there any tests on the project?",
-    //     name: "tests",
-    // },
-    // {
-    //     type: "input",
-    //     message: "What are the issues you had?",
-    //     name: "questions",
-    // },
-    // {
-    //     type: "input",
-    //     message: "Please enter your GitHub username:",
-    //     name: "Username",
-    // },
-    // {
-    //     type: "input",
-    //     message: "please enter your email adress:",
-    //     name: "email",
-    //}
+    {
+        type: "input",
+        message: "Who are the contributors of this projects?",
+        name: "contributing",
+    },
+    {
+        type: "input",
+        message: "Were there any tests on the project?",
+        name: "tests",
+    },
+    {
+        type: "input",
+        message: "What are the issues you had?",
+        name: "questions",
+    },
+    {
+        type: "input",
+        message: "Please enter your GitHub username:",
+        name: "Username",
+    },
+    {
+        type: "input",
+        message: "please enter your email adress:",
+        name: "email",
+    }
 
 ];
 
@@ -78,11 +78,11 @@ const questions = [{
 async function init() {
     try {
         // Ask user questions and generate responses
-        const answers = await inquirer.prompt(ques);
+        const answers = await inquirer.prompt(questions);
         const generateContent = generateReadme(answers);
         // Write new README.md to dist directory
-        // await writeFileAsync('./dist/README.md', generateContent);
-        // console.log('✔️  Successfully wrote to README.md');
+        await writeFileAsync("../dist/README.md", generateContent);
+
     } catch (err) {
         console.log(err);
     }
