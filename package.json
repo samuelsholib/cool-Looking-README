@@ -1,0 +1,26 @@
+{
+  "name": "inquirer-thing",
+  "version": "1.0.0",
+  "description": "This repo is going to have my  inquirer question on README.md",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuelsholib/inquirer-thing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samuelsholib/inquirer-thing/issues"
+  },
+  "homepage": "https://github.com/samuelsholib/inquirer-thing#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "events": "^3.3.0",
+    "inquirer": "^8.2.0",
+    "promisify": "^0.0.3",
+    "util": "^0.12.4"
+  }
+}
