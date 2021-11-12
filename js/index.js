@@ -1,7 +1,7 @@
 // declaring the dependencies
 const fs = require('fs');
 const inquirer = require('inquirer');
-var util = require('util');
+const util = require('util');
 const generateReadme = require("../utils/generateReadme")
 
 const writeFileAsync = util.promisify(fs.writeFile);
@@ -38,7 +38,7 @@ const questions = [{
         message: "Chose the appropriate license for this project:",
         name: "license",
 
-        Choices: ["MIT", "GNU", "Open", "Mozilla", "Apache", "BSD", ],
+        Choices: ["MIT", "GNU", "Open", "Mozilla", "Apache", "BSD", "ISC"]
     },
 
     {
@@ -80,13 +80,13 @@ async function init() {
         // Ask user questions and generate responses
         const answers = await inquirer.prompt(questions);
         const generateContent = generateReadme(answers);
-        // Write new README.md to dist directory
+        // Write a new README.md to dist directory
         await writeFileAsync("../dist/README.md", generateContent);
 
     } catch (err) {
         console.log(err);
     }
-    console.log('SourceBuffer');
+
 }
 
 init();
